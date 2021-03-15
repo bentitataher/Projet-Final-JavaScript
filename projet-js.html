@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Projet JavaScrit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="projet-js.css"> -->
+</head>
+
+<body>
+
+
+    <!-- ========================================================================================================= -->
+                                        <!-- Début - div container -->
+    <!-- ========================================================================================================= -->
+    <div class="container">
+
+        <!-- Début menu de navigation-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Annonces.tn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Début - Formualaire connéxion-->
+                <div class="form-inline ml-auto">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Search" id="con_login">
+                    <input class="form-control mr-sm-2" type="password" placeholder="Mot de passe" aria-label="Search" id="con_password">
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit" onclick="connexion();" id="btn-cnx">Connexion</button>
+                        
+                </div>
+                <!-- Fin - Formualaire connéxion-->
+
+
+                <!-- Début - Modal / Formualaire connéxion-->
+                <button type="button" class="btn btn-danger ml-3" data-toggle="modal" data-target="#modal">Incrivez-vous ici !</button>
+                    
+
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Choisissez un Login et un mot de passe :</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><spanaria-hidden="true">x</span></button>
+                                        
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="input-group mb-3"> <!-- - prénom - -->
+                                        <input type="text" class="form-control" placeholder="Entrez votre prenom"id="prenom">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Prenom</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - nom - -->
+                                        <input type="text" class="form-control" placeholder="Entrez votre nom"id="nom">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">nom</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - mail - -->
+                                        <input type="text" class="form-control" placeholder="Entrez votre e-mail"id="mail">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">@example.com</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - password - -->
+                                        <input type="password" class="form-control"placeholder="Choisissez un mot de passe" id="password">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">8 caractères min</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - confirmation password - -->
+                                        <input type="password" class="form-control"placeholder="Confirmez votre mot de passe" id="confirmation_password">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">8 caractères min</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - téléphone - -->
+                                        <input type="text" class="form-control"placeholder="Entrez votre numéro de téléphone" id="telephone">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">+216 xx xxx xxx</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - Adresse - -->
+                                        <input type="text" class="form-control"placeholder="Entrez votre adresse" id="adresse">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Adresse</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - Ville - -->
+                                        <input type="text" class="form-control"placeholder="Entrez le nom de votre ville" id="ville">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Ville</span></div>
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- - Code postal - -->
+                                        <input type="text" class="form-control"placeholder="Entrez votre code postal" id="code_postal">
+                                        <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Code Postal</span></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="inscription();">S'inscrire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin - Modal / Formualaire connéxion-->
+
+
+            </div>
+        </nav>
+        <!-- Fin - menu de navigation-->
+
+        <!-- début - carroussel -->
+
+        <div id="demo" class="carousel slide mt-2" data-ride="carousel">
+            <!-- Indicateurs -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+    
+            <!-- Carrousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://webappick.com/wp-content/uploads/2016/09/how-ways_to_increase_online_sales_1100x500px.png" alt="Carrousel slide 1" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4>Titre de la légende</h4>
+                  <p>Légende de la slide n°1.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.thebusinesswomanmedia.com/wp-content/uploads/2019/12/sales-process.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block text-dark">
+                  <h4>Titre de la légende</h4>
+                  <p>Légende de la slide n°2.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://thenextscoop.com/wp-content/uploads/2018/06/Sales-Management-For-Your-E-Commerce-Business-To-Flourish-1280x720.jpg" alt="Carrousel slide 3" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4>Titre de la légende</h4>
+                  <p>Légende de la slide n°3.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Contrôles -->
+            <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Suivant</span>
+            </a>
+          </div>
+
+        <!-- Fin - carroussel -->
+
+    <!-- ========================================================================================================= -->
+    </div>                                          <!-- Fin div container-->
+    <!-- ========================================================================================================= -->
+
+
+
+
+    <script src="projet-js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

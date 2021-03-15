@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Projet JavaScrit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="projet-js.css"> -->
+</head>
+
+<body onload="pre_load()">
+
+
+    <!-- ========================================================================================================= -->
+                                        <!-- Début - div container -->
+    <!-- ========================================================================================================= -->
+    <div class="container">
+
+        <!-- Début menu de navigation-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" id="bonjour">Bonjour </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Début - Collapse -->
+
+                <!-- Début - Formualaire connéxion-->
+                <div class="form-inline ml-auto">
+
+                    <!-- Début - Modal Profil -->
+                    <button type="button" class="btn btn-danger my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#modal-profil">Profil</button>
+
+                    <div class="modal fade" id="modal-profil" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" onclick="profil();"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                            </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="input-group mb-3"> <!-- - prénom - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Prenom</span></div>
+                                            <input type="text" class="form-control" placeholder="Entrez votre prenom"id="prenom">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - nom - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">nom</span></div>
+                                            <input type="text" class="form-control" placeholder="Entrez votre nom"id="nom">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - mail - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">E-mail</span></div>
+                                            <input type="text" class="form-control" placeholder="Entrez votre e-mail"id="mail">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - password - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">8 caractères min</span></div>
+                                            <input type="text" class="form-control"placeholder="Choisissez un mot de passe" id="password">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - téléphone - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">+216 xx xxx xxx</span></div>
+                                            <input type="text" class="form-control"placeholder="Entrez votre numéro de téléphone" id="telephone">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - Adresse - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Adresse</span></div>
+                                            <input type="text" class="form-control"placeholder="Entrez votre adresse" id="adresse">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - Ville - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Ville</span></div>
+                                            <input type="text" class="form-control"placeholder="Entrez le nom de votre ville" id="ville">
+                                        </div>
+                                        <div class="input-group mb-3"> <!-- - Code postal - -->
+                                            <div class="input-group-append"><span class="input-group-text"aria-label="fin de mail">Code Postal</span></div>
+                                            <input type="text" class="form-control"placeholder="Entrez votre code postal" id="code_postal">
+                                        </div>
+
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-primary" onclick="confirm_modif();">Confirmer</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Fin - Modal Profil -->
+
+                                                    <!-- -- Début - Ajouter une annonce -- -->
+
+
+                    <!-- Début - Bouton Mes annonces -->
+                    <button type="button" class="btn btn-danger my-2 my-sm-0 mr-2" onclick="mesAnnonces();">Mes annonces</button>
+                    <!-- Fin - Bouton Mes annonces -->
+
+                    <!-- Début - Bouton Toutes les annonces -->
+                    <button type="button" class="btn btn-danger my-2 my-sm-0 mr-2">Toutes les annonces</button>
+                    <!-- Fin - Bouton Toutes les annonces -->
+
+                    <!-- Début - Modal +Ajouter -->
+                    <button type="button" class="btn btn-danger my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#modal-ajouter">+ Ajouter</button>
+
+                    <div class="modal fade" id="modal-ajouter" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Ajouter une annonce</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                            </div>
+                            <div class="modal-body">
+
+                                    <div class="input-group mb-3"> <!-- Ajouter titre -->
+                                        <div class="input-group-prepend"><span class="input-group-text" aria-label="arobase">Titre de l'annonce</span></div>
+                                        <input type="text" class="form-control" placeholder="Ajouter un titre à votre annonce" id="titre">                  
+                                    </div>
+                                    <div class="input-group mb-3"> <!-- Ajouter Numéro téléphone -->
+                                        <div class="input-group-prepend"><span class="input-group-text" aria-label="arobase">Téléphone</span></div>
+                                        <input type="text" class="form-control" placeholder="Ajouter votre numéro de téléphone" id="phone">                  
+                                    </div>
+
+                                    <div class="input-group mb-3"> <!-- Ajouter image -->
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Ajouter une image</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="choose-file" aria-describedby="inputGroupFileAddon01">
+                                          <label class="custom-file-label" for="choose-file">Ajouter une Photo</label>
+                                        </div>
+                                    </div>  
+
+                                    <div class="input-group mb-3"> <!-- Image Preview -->
+                                        <img id="Preview-image">
+                                    </div>  
+
+                                    <div class="input-group mb-3"> <!-- Ajouter prix -->
+                                        <div class="input-group-prepend"><span class="input-group-text">Prix</span></div>
+                                        <input type="number" class="form-control" aria-label="Somme arrondie" id="prix">
+                                        <div class="input-group-append"><span class="input-group-text">TND</span></div>
+                                    </div>
+
+                                    <div class="input-group mb-3"> <!-- Ajouter description -->
+                                        <div class="input-group-prepend"><span class="input-group-text">Description</span></div>
+                                        <textarea class="form-control" aria-label="Biographie" id="decription"></textarea>
+                                    </div>
+
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-primary" id="ajouter" onclick="f_ajouter();">Ajouter</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Fin - Modal +Ajouter -->
+
+                                                        <!-- -- Fin - Ajouter une annonce -- -->
+
+                                                        
+                    <!-- Début - Bouton déconnexion-->
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit" onclick="deconnexion();" id="btn-decnx">Déconnexion</button>
+                    <!-- Début - Bouton déconnexion-->
+                    
+                </div>
+                <!-- Fin - Formualaire connéxion-->
+
+
+
+
+            </div> <!-- Fin - Collapse -->
+        </nav>
+        <!-- Fin - menu de navigation-->
+
+
+
+
+    <!-- ========================================================================================================= -->
+    </div>                                          <!-- Fin div container-->
+    <!-- ========================================================================================================= -->
+
+    
+
+
+
+
+    <script src="compte.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
